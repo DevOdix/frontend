@@ -1,0 +1,50 @@
+.login {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/Img002.jpg");
+     /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    }
+    
+.login-form {
+
+    border-radius: 10px;
+    margin-top: 15px;
+   /* background-color : hsla(0,0%,100%,.4); */
+    padding: 10px;
+    border: 1px black solid; 
+    overflow: hidden;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+}
+
+.tab-panel {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.social-auth {
+    display: flex;
+    /*padding: 10px;*/
+    align-items: center;
+}
+.useremail {
+    padding : 10px;
+    width : 390px;
+}
+
+.userpassword {
+    padding : 10px;
+    width : 390px;
+}
+
+.header-title {
+    padding-top: 60px;
+    width: 400px;
+}
