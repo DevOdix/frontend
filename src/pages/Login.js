@@ -10,6 +10,9 @@ import Button from '@material-ui/core/Button';
 import ReCAPTCHA from "react-google-recaptcha";
 import { FaFacebook, FaLinkedin } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
+
+import { GoogleLogin } from 'react-google-login';
+
 import { UserContext } from '../shared/context/user-context';
 
 import headerImg from '../images/img01.jpg';
@@ -66,6 +69,10 @@ export default function Login() {
 
     }
 
+    const responseGoogle = (response) => {
+        console.log(response)
+    }
+
     return (
 
         <div className="login">
@@ -82,18 +89,25 @@ export default function Login() {
                         textColor="primary"
                         value={value}
                         variant="fullWidth"
-                        onChange={handleChange}
-                    >
+                        onChange={handleChange}>
                         <Tab label="Sign In" {...a11yProps(0)} />
                         <Tab label="New Account" {...a11yProps(1)} />
                     </Tabs>
                 </Paper>
                 <TabPanel value={value} index={0}>
                     <div className="tab-panel">
-                    <div className="social-auth">
-                        <FaFacebook color="#1877f2" style={{ padding: 10, width: "3em", height: "3em" }} />
+                    <div>
+                       { /*<FaFacebook color="#1877f2" style={{ padding: 10, width: "3em", height: "3em" }} />
                         <FcGoogle style={{ padding: 10, width: "3em", height: "3em" }} />
                         <FaLinkedin color="#0072b1" style={{ padding: 10, width: "3em", height: "3em" }} />
+        */  }           <GoogleLogin
+                            clientId="941181182866-ppe3f0h6ol3ihguehsgdmiu53coast49.apps.googleusercontent.com"
+                            buttonText="Se connecter avec Google"
+                            onSuccess={responseGoogle}
+                            onFailure={responseGoogle}
+                            cookiePolicy={'single_host_origin'}
+                            style={{ width: '300px', padding: 10 }}
+                        />
                     </div>
                     <TextField
                         required
